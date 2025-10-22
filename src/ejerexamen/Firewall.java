@@ -7,7 +7,11 @@ public class Firewall {
     private boolean estado;
     private int intentosBloqueo;
 
-    //Constructor
+    //constructor por defecto
+    public Firewall(){
+
+    }
+    //Constructor por parámetros
     public Firewall(String regla, int puerto, boolean estado){
         this.regla=regla;
         setPuerto(puerto);
@@ -23,8 +27,9 @@ public class Firewall {
     public void setPuerto(int puerto) {
         if (puerto >= 1 && puerto <= 65535){
             this.puerto = puerto;
+            System.out.println("\nPuerto Válido");
         }else {
-            System.out.println("Puerto Inválido");
+            System.out.println("\nPuerto Inválido");
         }
     }
 
@@ -70,10 +75,10 @@ public class Firewall {
     }
 
     public void mostrarEstado(){
-        System.out.println("Regla: "+regla);
+        System.out.println("\nRegla: "+regla);
         System.out.println("Puerto bloqueado: "+puerto);
         System.out.println("Estado: "+(estado?"Activado":"Desactivado"));
-        System.out.println("Intentos bloqueados: "+intentosBloqueo);
+        System.out.println("Intentos bloqueados: "+intentosBloqueo+"\n");
     }
 
 }

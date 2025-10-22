@@ -4,6 +4,7 @@ public class MainFirewall {
     public static void main(String[] args) {
         Firewall f1 = new Firewall("Bloqueo SSH",22,false);
 
+
         f1.mostrarEstado();
 
         f1.activar();
@@ -14,8 +15,12 @@ public class MainFirewall {
         f1.mostrarEstado();
 
         f1.desactivar();
-        f1.bloquearIntento(22);
+        f1.bloquearIntento(22); //conexion permitida
 
         f1.mostrarEstado();
+
+        Firewall f2 = new Firewall();
+        f2.setPuerto(0);
+
     }
 }
